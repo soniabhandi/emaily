@@ -8,6 +8,9 @@ import { applyMiddleware } from "redux";
 import { legacy_createStore as createStore } from "redux";
 import reducers from "./reducers";
 
+import axios from "axios";
+window.axios = axios;
+
 const root = ReactDOM.createRoot(document.getElementById("root"));
 
 const store = createStore(reducers, {}, applyMiddleware(thunk));
